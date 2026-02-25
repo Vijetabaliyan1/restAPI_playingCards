@@ -3,7 +3,8 @@ const app = express();
 
 app.use(express.json());
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+
 
 let cards = [];
 
@@ -58,5 +59,6 @@ app.delete('/cards/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
+
 });
